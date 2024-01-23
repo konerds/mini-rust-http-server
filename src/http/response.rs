@@ -13,7 +13,7 @@ impl Response {
     pub fn new(status: StatusHttp, body: Option<String>) -> Self {
         Response { status, body }
     }
-    pub fn send(&self, stream: &mut TcpStream) -> ResultIo<()> {
+    pub fn send(&self, stream: &mut impl Write) -> ResultIo<()> {
         let body = match &self.body {
             Some(b) => b,
             None => "",
