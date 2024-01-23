@@ -7,3 +7,9 @@ pub use method::Method;
 
 mod query;
 pub use query::{Query, TypeValueQuery};
+
+mod status;
+pub use status::StatusHttp;
+
+mod response;
+pub use response::Response;
