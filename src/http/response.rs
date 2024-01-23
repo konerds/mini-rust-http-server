@@ -1,7 +1,6 @@
 use super::StatusHttp;
 use std::fmt::Debug;
 use std::io::{Result as ResultIo, Write};
-use std::net::TcpStream;
 
 #[derive(Debug)]
 pub struct Response {
