@@ -13,6 +13,18 @@ pub struct Request<'buf> {
     method: Method,
 }
 
+impl<'buf> Request<'buf> {
+    pub fn path(&self) -> &str {
+        &self.path
+    }
+    pub fn method(&self) -> &Method {
+        &self.method
+    }
+    pub fn query(&self) -> Option<&Query> {
+        self.query.as_ref()
+    }
+}
+
 fn get_token_next(req: &str) -> Option<(&str, &str)> {
     for (i, c) in req.chars().enumerate() {
         if c.is_whitespace() || c == '\r' {
